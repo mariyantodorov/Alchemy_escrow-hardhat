@@ -1,47 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply bg-sky-500 text-white text-center font-bold uppercase py-2 px-6 text-sm cursor-pointer rounded;
+    letter-spacing: 1px;
+  }
+  .title {
+    @apply uppercase border-b border-b-gray-300;
+  }
+  .input {
+    @apply mb-2 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+      invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500;
+  }
+}
+
 body {
   background-color: #eee;
-  display: flex;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
 }
 
-.contract, .existing-contracts {
-  margin: 20px;
-  display: inline-block;
-  padding: 40px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-}
-
-h1 {
-  margin: 10px;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+.contract,
+.existing-contracts {
+  @apply inline-block bg-white border border-gray-200;
 }
 
 label {
-  display: flex;
-  flex-direction: column;
-  text-transform: uppercase;
-  color: #aaa;
-  margin: 20px;
-}
-
-input[type="text"] {
-  padding: 6px;
-  font-size: 18px;
-}
-
-.button {
-  background-color: #f58427;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 20px;
-  padding: 9px 25px;
-  font-size: 14px;
-  letter-spacing: 1px;
-  cursor: pointer;
+  @apply text-gray-500;
 }
 
 .existing-contract ul {

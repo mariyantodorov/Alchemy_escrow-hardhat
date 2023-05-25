@@ -1,3 +1,5 @@
+import { ethers } from "ethers";
+
 export default function Escrow({
   address,
   arbiter,
@@ -9,18 +11,24 @@ export default function Escrow({
     <div className="existing-contract">
       <ul className="fields">
         <li>
-          <div> Arbiter </div>
-          <div> {arbiter} </div>
+          <div>Arbiter</div>
+          <div>
+            {arbiter.slice(0, 6)}...
+            {arbiter.slice(arbiter.length - 4, arbiter.length)}
+          </div>
         </li>
         <li>
-          <div> Beneficiary </div>
-          <div> {beneficiary} </div>
+          <div>Beneficiary</div>
+          <div>
+            {beneficiary.slice(0, 6)}...
+            {beneficiary.slice(beneficiary.length - 4, beneficiary.length)}
+          </div>
         </li>
         <li>
-          <div> Value </div>
-          <div> {value} </div>
+          <div>Value</div>
+          <div>{ethers.utils.formatEther(value)}</div>
         </li>
-        <div
+        <button
           className="button"
           id={address}
           onClick={(e) => {
@@ -30,7 +38,7 @@ export default function Escrow({
           }}
         >
           Approve
-        </div>
+        </button>
       </ul>
     </div>
   );
